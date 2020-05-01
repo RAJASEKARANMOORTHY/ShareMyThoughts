@@ -112,24 +112,24 @@ namespace AmazonOnlineAssessment.DataStructure
             int leftChildIndex = parentIndex * 2 + 1;
             int rightChildIndex = parentIndex * 2 + 2;
 
-            int minIndex = parentIndex;
+            int maxIndex = parentIndex;
 
             if (leftChildIndex >= 0 && leftChildIndex < size &&
-                _queue[leftChildIndex].Priority > _queue[minIndex].Priority)
+                _queue[leftChildIndex].Priority > _queue[maxIndex].Priority)
             {
-                minIndex = leftChildIndex;
+                maxIndex = leftChildIndex;
             }
 
             if (rightChildIndex >= 0 && rightChildIndex < size &&
-                _queue[rightChildIndex].Priority > _queue[minIndex].Priority)
+                _queue[rightChildIndex].Priority > _queue[maxIndex].Priority)
             {
-                minIndex = rightChildIndex;
+                maxIndex = rightChildIndex;
             }
 
-            if (minIndex != parentIndex)
+            if (maxIndex != parentIndex)
             {
-                Swap(minIndex, parentIndex);
-                MinHeap(minIndex);
+                Swap(maxIndex, parentIndex);
+                MinHeap(maxIndex);
             }
         }
 

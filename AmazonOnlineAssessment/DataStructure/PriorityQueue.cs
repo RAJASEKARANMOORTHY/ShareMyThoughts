@@ -129,7 +129,7 @@ namespace AmazonOnlineAssessment.DataStructure
             if (maxIndex != parentIndex)
             {
                 Swap(maxIndex, parentIndex);
-                MinHeap(maxIndex);
+                MaxHeap(maxIndex);
             }
         }
 

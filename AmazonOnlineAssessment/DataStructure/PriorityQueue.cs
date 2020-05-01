@@ -20,7 +20,7 @@ namespace AmazonOnlineAssessment.DataStructure
     {
         private List<T> _queue;
         private bool _minHeap = false;
-        public int Size  { get => _queue.Count; }
+        public int Size { get => _queue.Count; }
 
         public PriorityQueue(bool minHeap = false)
         {
@@ -32,7 +32,7 @@ namespace AmazonOnlineAssessment.DataStructure
         {
             _queue.Add(item);
 
-            if(Size > 1)
+            if (Size > 1)
             {
                 Heapify();
             }
@@ -40,7 +40,7 @@ namespace AmazonOnlineAssessment.DataStructure
 
         public T Dequeue()
         {
-            if(Size > 0)
+            if (Size > 0)
             {
                 T firstValue = _queue[0];
                 _queue.RemoveAt(0);
@@ -61,18 +61,20 @@ namespace AmazonOnlineAssessment.DataStructure
 
             return default(T);
         }
-            public void Heapify()
+        public void Heapify()
         {
-            int size = _queue.Count;
-            for (int parentIndex = size / 2; parentIndex >= 0; parentIndex--)
+            if (Size > 1)
             {
-                if (_minHeap)
+                for (int parentIndex = Size / 2; parentIndex >= 0; parentIndex--)
                 {
-                    MinHeap(parentIndex);
-                }
-                else
-                {
-                    MaxHeap(parentIndex);
+                    if (_minHeap)
+                    {
+                        MinHeap(parentIndex);
+                    }
+                    else
+                    {
+                        MaxHeap(parentIndex);
+                    }
                 }
             }
         }

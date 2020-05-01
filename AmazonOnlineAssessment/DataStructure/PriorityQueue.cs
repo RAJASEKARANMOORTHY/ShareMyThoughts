@@ -31,7 +31,11 @@ namespace AmazonOnlineAssessment.DataStructure
         public void Enqueue(T item)
         {
             _queue.Add(item);
-            Heapify();
+
+            if(Size > 1)
+            {
+                Heapify();
+            }
         }
 
         public T Dequeue()

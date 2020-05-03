@@ -8,7 +8,7 @@ using AmazonOnlineAssessment.DataStructure;
 namespace AmazonOnlineAssessment
 {
     [TestClass]
-    public class GetTopTopys
+    public class clsGetTopTopys
     {
         [TestMethod]
         public void getTopToys_PriorityQueue()

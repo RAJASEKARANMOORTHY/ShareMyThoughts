@@ -4,25 +4,25 @@ using System.Text;
 
 namespace AmazonOnlineAssessment.DataStructure
 {
-    public class QueueItem
+    public class HeapItem
     {
         public int Priority { get; set; }
-        public object Value { get; }
+        public int Value { get; }
 
-        public QueueItem(object value, int priority)
+        public HeapItem(int value, int priority)
         {
             Priority = priority;
             Value = value;
         }
     }
 
-    public class PriorityQueue<T> where T : QueueItem
+    public class Heap<T> where T : HeapItem
     {
         private List<T> _queue;
         private bool _minHeap = false;
         public int Size { get => _queue.Count; }
 
-        public PriorityQueue(bool minHeap = false)
+        public Heap(bool minHeap = false)
         {
             _minHeap = minHeap;
             this._queue = new List<T>();
@@ -31,11 +31,6 @@ namespace AmazonOnlineAssessment.DataStructure
         public void Enqueue(T item)
         {
             _queue.Add(item);
-
-            if (Size > 1)
-            {
-                Heapify();
-            }
         }
 
         public T Dequeue()
@@ -44,7 +39,6 @@ namespace AmazonOnlineAssessment.DataStructure
             {
                 T firstValue = _queue[0];
                 _queue.RemoveAt(0);
-                Heapify();
                 return firstValue;
             }
 

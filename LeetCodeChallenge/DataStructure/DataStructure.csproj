@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>LeetCodeChallenge.DataStructure</RootNamespace>
+    <AssemblyName>LeetCodeChallenge.DataStructure</AssemblyName>
+  </PropertyGroup>
+
+</Project>
